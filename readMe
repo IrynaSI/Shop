@@ -30,13 +30,13 @@ List of available methods:
     - Select from DB 
     
 REST API URLs:
-    - Create item  - REST — http://shop.bugred.ru/api/items/create/ 
-    - Update item  - REST — http://shop.bugred.ru/api/items/update/ 
-    - Upload photo - REST — http://shop.bugred.ru/api/items/upload_photo/ 
-    - Get item - REST — http://shop.bugred.ru/api/items/get/ 
-    - Delete item - REST — http://shop.bugred.ru/api/items/delete/ 
-    - Search - REST — http://shop.bugred.ru/api/items/search/ 
-    - Select from DB - REST — http://shop.bugred.ru/api/items/select/ 
+    - Create item  - http://shop.bugred.ru/api/items/create/ 
+    - Update item  - http://shop.bugred.ru/api/items/update/ 
+    - Upload photo - http://shop.bugred.ru/api/items/upload_photo/ 
+    - Get item - http://shop.bugred.ru/api/items/get/ 
+    - Delete item - http://shop.bugred.ru/api/items/delete/ 
+    - Search - http://shop.bugred.ru/api/items/search/ 
+    - Select from DB - http://shop.bugred.ru/api/items/select/ 
 
 
 REST API Requirements:
