@@ -1,2 +1,13 @@
+Shop - test project for study rest api automation testing with Postman
+Rest API, Postman, javascript, Chai.js 
+
+/************/
 Shop
-Rest API, JS, Chai.js 
+http://shop.bugred.ru/ 
+
+DB: https://46.36.217.134:8888/phpmyadmin/sql.php?server=1&db=shop_bugred_r_db&table=items&pos=0
+
+login - view_user
+password -  ZQl3Ea1uhHTzzl3j
+
+Documentation — https://testbase.atlassian.net/wiki/spaces/SHOP/overview
