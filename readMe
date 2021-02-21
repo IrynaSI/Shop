@@ -21,13 +21,13 @@ URL fot REST - http://shop.bugred.ru/api/items/<method_name>
 All methods are realized via POST
 
 List of available methods:
-    - Create item  - REST — http://shop.bugred.ru/api/items/create/ (requirements - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1957496610/Create+item)
-    - Update item  - REST — http://shop.bugred.ru/api/items/update/ (requirements - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1969422366/Update+item)
-    - Upload photo - REST — http://shop.bugred.ru/api/items/upload_photo/ (requirements - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1969487957/Upload+photo)
-    - Get item - REST — http://shop.bugred.ru/api/items/get/ (requirements - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1969291375/Get+item)
-    - Delete item - REST — http://shop.bugred.ru/api/items/delete/ (requirements - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1969160261/Delete+item)
-    - Search - REST — http://shop.bugred.ru/api/items/search/ (requirements - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1957464487/Search)
-    - Select from DB - REST — http://shop.bugred.ru/api/items/select/ (requirements - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1969258788/Select)
+    - Create item  
+    - Update item 
+    - Upload photo 
+    - Get item 
+    - Delete item 
+    - Search 
+    - Select from DB 
     
 REST API URLs:
     - Create item  - REST — http://shop.bugred.ru/api/items/create/ 
