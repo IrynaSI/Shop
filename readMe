@@ -17,3 +17,14 @@ Documentation — https://testbase.atlassian.net/wiki/spaces/SHOP/overview
 All methods are available via both REST and SOAP
 WSDL для SOAP -  http://shop.bugred.ru/soap.php?wsdl
 URL fot REST - http://shop.bugred.ru/api/items/<method_name>
+
+List of available methods:
+    - Create item
+    - Update item
+    - Upload photo
+    - Get item
+    - Delete item
+    - Search
+    - Select from DB
+    
+    
