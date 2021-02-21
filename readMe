@@ -14,6 +14,6 @@ password -  ZQl3Ea1uhHTzzl3j
 Documentation — https://testbase.atlassian.net/wiki/spaces/SHOP/overview
 
 /******Shop methods*****/
-All methods are available via bort REST and SOAP
+All methods are available via both REST and SOAP
 WSDL для SOAP -  http://shop.bugred.ru/soap.php?wsdl
 URL fot REST - http://shop.bugred.ru/api/items/<method_name>
