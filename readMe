@@ -7,11 +7,12 @@ Shop
 http://shop.bugred.ru/ 
 
 DB: https://46.36.217.134:8888/phpmyadmin/sql.php?server=1&db=shop_bugred_r_db&table=items&pos=0
+DB Documentation - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1971978345
 
 login - view_user
 password -  ZQl3Ea1uhHTzzl3j
 
-Documentation — https://testbase.atlassian.net/wiki/spaces/SHOP/overview
+Shop Documentation — https://testbase.atlassian.net/wiki/spaces/SHOP/overview
 
 /******Shop methods*****/
 All methods are available via both REST and SOAP
@@ -20,12 +21,12 @@ URL fot REST - http://shop.bugred.ru/api/items/<method_name>
 All methods are realized via POST
 
 List of available methods:
-    - Create item  - REST — http://shop.bugred.ru/api/items/create/ (requirement - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1957496610/Create+item)
-    - Update item  - REST — http://shop.bugred.ru/api/items/update/ (requirement - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1969422366/Update+item)
-    - Upload photo - REST — http://shop.bugred.ru/api/items/upload_photo/ (requirement - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1969487957/Upload+photo)
-    - Get item - 
-    - Delete item
-    - Search
+    - Create item  - REST — http://shop.bugred.ru/api/items/create/ (requirements - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1957496610/Create+item)
+    - Update item  - REST — http://shop.bugred.ru/api/items/update/ (requirements - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1969422366/Update+item)
+    - Upload photo - REST — http://shop.bugred.ru/api/items/upload_photo/ (requirements - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1969487957/Upload+photo)
+    - Get item - REST — http://shop.bugred.ru/api/items/get/ (requirements - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1969291375/Get+item)
+    - Delete item - REST — http://shop.bugred.ru/api/items/delete/ (requirements - https://testbase.atlassian.net/wiki/spaces/SHOP/pages/1969160261/Delete+item)
+    - Search - 
     - Select from DB
     
     
