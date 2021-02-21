@@ -238,7 +238,7 @@
 											"\r",
 											"/*** item creation verification (status) ***/\r",
 											"pm.test(\"item is successfully created\", function(){\r",
-											"    pm.expect(jsonData.status).is.тeql(\"ok\");\r",
+											"    pm.expect(jsonData.status).is.eql(\"ok\");\r",
 											"});\r",
 											"\r",
 											"/*** item result verification ***/\r",
@@ -466,6 +466,94 @@
 										"api",
 										"items",
 										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test 2.1_ Update item_obligatory fields",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"\r",
+											"    const createItem={\r",
+											"        url:\"http://shop.bugred.ru/api/items/create/\",\r",
+											"        method:\"POST\",\r",
+											"        header:[\"Content-Type:application/json\", \"Accept:application/json\"],\r",
+											"        body:{\r",
+											"            mode:\"raw\",\r",
+											"            raw:JSON.stringify({\r",
+											"                name:\"New dress\", \r",
+											"                section:\"Платья\",\r",
+											"                description:\"Dress from new collection!\"\r",
+											"            })\r",
+											"        }\r",
+											"    };\r",
+											"\r",
+											"    pm.sendRequest(createItem,function(err,res){\r",
+											"        if(err){\r",
+											"            console.log(err)\r",
+											"        }else{\r",
+											"            console.log(res.json());\r",
+											"            pm.environment.set(\"itemId\", res.json().result.id); \r",
+											"        }    \r",
+											"    });\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json(); //response from server\r",
+											"\r",
+											"\r",
+											"/*** item creation verification (status) ***/\r",
+											"pm.test(\"item is NOT successfully created\", function(){\r",
+											"    pm.expect(jsonData.status).is.not.eql(\"ok\");\r",
+											"});\r",
+											"\r",
+											"/*** item result verification ***/\r",
+											"pm.test(\"item  name is NOT correct\", function(){\r",
+											"    pm.expect(jsonData.result).is.not.eql(\"Товар обновлен!\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"{{itemId}}\",\r\n    \"name\":\"Old Dress{{$randomInt}}\",\r\n    \"section\":\"Категория 1\",\r\n    \"description\":\"Dress from old collection\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://shop.bugred.ru/api/items/update/",
+									"protocol": "http",
+									"host": [
+										"shop",
+										"bugred",
+										"ru"
+									],
+									"path": [
+										"api",
+										"items",
+										"update",
 										""
 									]
 								}
