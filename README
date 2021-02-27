@@ -34,6 +34,15 @@ REST API URLs:
     - Update item  - http://shop.bugred.ru/api/items/update/ 
     - Upload photo - http://shop.bugred.ru/api/items/upload_photo/ 
     - Get item - http://shop.bugred.ru/api/items/get/ 
+    
+ relized tests:
+ - Create item:
+     Test 1.1 _Create item_all fields + photo format - base64
+     Test 1.2_ Create item_obligatory fields fields
+ - Edit item
+    Test 2.1_ Update item_obligatory fields
+    Test 2.2_ Update item_all fields
+    
     - Delete item - http://shop.bugred.ru/api/items/delete/ 
     - Search - http://shop.bugred.ru/api/items/search/ 
     - Select from DB - http://shop.bugred.ru/api/items/select/ 
