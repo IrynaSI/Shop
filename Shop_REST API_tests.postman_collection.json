@@ -473,7 +473,95 @@
 							"response": []
 						},
 						{
-							"name": "Test 2.Get information about item Получить информацию о товаре_http://shop.bugred.ru/api/items/get/",
+							"name": "Test 2.Update item_obligatory fields Copy",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"\r",
+											"    const createItem={\r",
+											"        url:\"http://shop.bugred.ru/api/items/create/\",\r",
+											"        method:\"POST\",\r",
+											"        header:[\"Content-Type:application/json\", \"Accept:application/json\"],\r",
+											"        body:{\r",
+											"            mode:\"raw\",\r",
+											"            raw:JSON.stringify({\r",
+											"                name:\"New dress\", \r",
+											"                section:\"Платья\",\r",
+											"                description:\"Dress from new collection!\"\r",
+											"            })\r",
+											"        }\r",
+											"    };\r",
+											"\r",
+											"    pm.sendRequest(createItem,function(err,res){\r",
+											"        if(err){\r",
+											"            console.log(err)\r",
+											"        }else{\r",
+											"            console.log(res.json());\r",
+											"            pm.environment.set(\"itemId\", res.json().result.id); \r",
+											"        }    \r",
+											"    });\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json(); //response from server\r",
+											"\r",
+											"\r",
+											"/*** item creation verification (status) ***/\r",
+											"pm.test(\"item is successfully created\", function(){\r",
+											"    pm.expect(jsonData.status).is.eql(\"ok\");\r",
+											"});\r",
+											"\r",
+											"/*** item result verification ***/\r",
+											"pm.test(\"item  name is correct\", function(){\r",
+											"    pm.expect(jsonData.result).is.eql(\"Товар обновлен!\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"{{idFromResponse}}\",\r\n    \"name\":\"Old Dress{{$randomInt}}\",\r\n    \"section\":\"Категория 1\",\r\n    \"description\":\"Dress from old collection\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://shop.bugred.ru/api/items/update/",
+									"protocol": "http",
+									"host": [
+										"shop",
+										"bugred",
+										"ru"
+									],
+									"path": [
+										"api",
+										"items",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test 3.Get information about item Получить информацию о товаре_http://shop.bugred.ru/api/items/get/",
 							"event": [
 								{
 									"listen": "test",
@@ -544,7 +632,7 @@
 							"response": []
 						},
 						{
-							"name": "Test 3 . Select_ sql_query by id",
+							"name": "Test 4 . Select_ sql_query by id",
 							"event": [
 								{
 									"listen": "test",
@@ -597,7 +685,7 @@
 							"response": []
 						},
 						{
-							"name": "Test 4. Upload photo",
+							"name": "Test 5. Upload photo",
 							"event": [
 								{
 									"listen": "test",
@@ -610,7 +698,7 @@
 											" \r",
 											"/********photo is updoaded successfully *******/\r",
 											"pm.test(\"Photo for item \"+idFromResponse+\" is successfully uploaded!\", function(){\r",
-											"    pm.expect(jsonData.result).to.eql(\"Photo for item  \"+idFromResponse+\" is successfully uploaded!\");\r",
+											"    pm.expect(jsonData.result).to.eql(\"Фотография для товара \"+idFromResponse+\" успешно загружена!\");\r",
 											"});\r",
 											"\r",
 											"/********photo is uploaded - status:ok!*******/\r",
@@ -664,7 +752,7 @@
 							"response": []
 						},
 						{
-							"name": "Test 5. Get information about item and added additional photo",
+							"name": "Test 6. Get information about item and added additional photo",
 							"event": [
 								{
 									"listen": "test",
@@ -734,7 +822,7 @@
 							"response": []
 						},
 						{
-							"name": "Test 6 . Select_ sql_query by id2",
+							"name": "Test 7 . Select_ sql_query by id2",
 							"event": [
 								{
 									"listen": "test",
