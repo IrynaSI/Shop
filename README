@@ -57,3 +57,11 @@ Smoke tests:
     Test 2.1_ Update item_obligatory fields
     Test 2.2_ Update item_all fields
     
+   Full test:
+      - Create item;
+      - Update item;
+      - Get info about created item; 
+      - Get item info by SQL (main photo);
+      - Upload additional photo (photo2);
+      - Get info about edited item
+      - Get item info by SQL (additional photo);
